@@ -20,9 +20,9 @@ function validateRepoId(request, response, next) {
 }
 
 function validateLikes(request, response, next) {
-  const { likes } = request.body;
+  const { likes, like } = request.body;
 
-  if (likes) {
+  if (likes || like) {
     return response.status(400).json({ error: "You cant manually edit likes" });
   }
 
